@@ -58,37 +58,35 @@ router.get('/', async (req, res) => {
 
                let GIFTED_MD_TEXT = `
  💀 *_The Realm of Pain Welcomes You...* 💀
-    ═════════════════════════════════════
+    ══════════════════════════════
     
-    🤖 *_Connected by the Great MX-GΔMΞCØDΞR_* 🤖
+    🤖 *_Connected by the Great MX-GΔMΞCØDΞR_* 
     
-    🌩️ *Vortex Rebirth - Designed by the Dark Lord MX-GΔMΞCØDΞR* 🌩️
+    🌩️ *Vortex Rebirth - Designed by the Dark 
+         
+         Lord MX-GΔMΞCØDΞR* 🌩️
 
-    ╔════════════════════════════════╗
-    ║ 🔥 *『 Welcome to the REAL DARKNESS! 』* 🔥
+    ╔════════════════════════
+    ║ 🔥 *『 Welcome to the REAL 』* 🔥
     ║
-    ║ You're foolish enough to make it here. Congrats, I guess.  
+    ║ You're foolish enough to make it here.
+    ║  Congrats, I guess.  
     ║ Let's see if you can survive *VRT*.  
-    ╚════════════════════════════════╝
+    ╚═════════════════════════
     
-    ⚡ *『 BOT REPO - Don’t Dare to Fork Me! 』* ⚡
+    ⚡ *『 BOT REPO - Don’t Dare to Fork Me! 』* 
     🔗 https://github.com/msgamecoder/vortex-rebirth
 
-    ═════════════════════════════════════
+    ═══════════════════════
 
-    📢 *『 Join the Cult – WhatsApp Channel 』* 📢
+    📢 *『 Join the Cult – WhatsApp Channel 』* 
     🔗 https://chat.whatsapp.com/CB3O8v4T6ho14mDO9TpBYZ
     
-    ═════════════════════════════════════
+    ════════════════════════
 
-    👥 *『 Your Last Chance - WhatsApp Group 』* 👥
-    🔗 https://whatsapp.com/channel/0029Vb06pAP4IBhMMnZtnM3X
-
-    ═════════════════════════════════════
-
-    ⚠️ *_2025 - The Dark Reign of MX-GΔMΞCØDΞR_* ⚠️
+    ⚠️ *_2025 - The Reign of MX-GΔMΞCØDΞR_*
     
-    🤡 *You’re weak if you don’t give my repo a ⭐*
+    *You’re weak if you don’t give my repo a ⭐*
 `
 
  await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id,{text: GIFTED_MD_TEXT},{quoted:session})
