@@ -58,7 +58,7 @@ router.get('/', async (req, res) => {
 
                let GIFTED_MD_TEXT = `
  💀 *_The Realm of Pain Welcomes You...* 💀
-    ══════════════════════════════
+    ═════════════════════════════
     
     🤖 *_Connected by the Great MX-GΔMΞCØDΞR_* 
     
