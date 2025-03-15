@@ -33,27 +33,92 @@ html, body {
     font-family: 'Orbitron', sans-serif;
     color: white;
     text-transform: uppercase;
+    overflow: hidden;
 }
 
-/* Glitch Text Effect */
+/* 🔥 SMOKY BACKGROUND EFFECT */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: url('https://i.imgur.com/q93gX6S.gif') repeat;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -2;
+    animation: smoke-move 15s infinite linear;
+}
+
+@keyframes smoke-move {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+/* 💀 GLITCHING TEXT */
 @keyframes glitch {
-    0% { text-shadow: 2px 2px #ff0055, -2px -2px #00ffff; }
-    25% { text-shadow: -2px 2px #ffcc00, 2px -2px #ff0055; }
-    50% { text-shadow: 2px -2px #ff0055, -2px 2px #00ffff; }
-    75% { text-shadow: -2px -2px #ffcc00, 2px 2px #ff0055; }
-    100% { text-shadow: 2px 2px #ff0055, -2px -2px #00ffff; }
+    0% { text-shadow: 3px 3px #ff0055, -3px -3px #00ffff; }
+    25% { text-shadow: -3px 3px #ffcc00, 3px -3px #ff0055; }
+    50% { text-shadow: 3px -3px #ff0055, -3px 3px #00ffff; }
+    75% { text-shadow: -3px -3px #ffcc00, 3px 3px #ff0055; }
+    100% { text-shadow: 3px 3px #ff0055, -3px -3px #00ffff; }
 }
 
 h1 {
     font-size: 30px;
-    animation: glitch 0.4s infinite alternate;
+    animation: glitch 0.2s infinite alternate;
 }
 
+/* 🔥 SHAKING BUTTONS */
 .button-container {
     margin: 15px 0;
+    animation: shake 0.3s infinite alternate;
 }
 
-/* Neon Button */
+@keyframes shake {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    25% { transform: rotate(1deg) translate(2px, -2px); }
+    50% { transform: rotate(-1deg) translate(-2px, 2px); }
+    75% { transform: rotate(1deg) translate(2px, -2px); }
+    100% { transform: rotate(0deg) translate(0, 0); }
+}
+
+/* 🔮 DARK MAGIC RUNES */
+.vortex-seal {
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(255, 0, 85, 0.8) 10%, rgba(0, 0, 0, 0) 70%);
+    border: 2px solid #ff0055;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 30px #ff0055;
+    animation: vortex-spin 2s linear infinite, glow-pulse 1s infinite alternate, seal-shake 0.2s infinite alternate;
+}
+
+@keyframes vortex-spin {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 10px #ff0055; }
+    100% { box-shadow: 0 0 40px #ffcc00; }
+}
+
+@keyframes seal-shake {
+    0% { transform: translateX(-50%) rotate(0deg) translateY(0); }
+    25% { transform: translateX(-50%) rotate(2deg) translateY(2px); }
+    50% { transform: translateX(-50%) rotate(-2deg) translateY(-2px); }
+    75% { transform: translateX(-50%) rotate(2deg) translateY(2px); }
+    100% { transform: translateX(-50%) rotate(0deg) translateY(0); }
+}
+
+/* ⚡ SHADOW CLONES ON BUTTON HOVER */
 .glow-on-hover {
     width: 250px;
     height: 60px;
@@ -67,12 +132,11 @@ h1 {
     overflow: hidden;
     transition: 0.2s ease-in-out;
     border-radius: 8px;
-    animation: button-glitch 0.3s infinite;
+    animation: button-glitch 0.3s infinite alternate;
 }
 
-/* Button Border Glow */
-.glow-on-hover::before {
-    content: "";
+.glow-on-hover:hover::before {
+    content: " ";
     position: absolute;
     top: -5px;
     left: -5px;
@@ -81,18 +145,27 @@ h1 {
     background: linear-gradient(45deg, #ff0055, #ffcc00, #00ffcc, #ff0055);
     background-size: 300%;
     z-index: -1;
-    filter: blur(8px);
+    filter: blur(15px);
     animation: neon-glow 3s infinite linear;
 }
 
-/* Neon Glow Effect */
 @keyframes neon-glow {
     0% { background-position: 0 0; }
     50% { background-position: 100% 0; }
     100% { background-position: 0 0; }
 }
 
-/* Button Glitch Animation */
+.glow-on-hover:hover {
+    animation: shadow-clone 0.3s infinite alternate;
+}
+
+@keyframes shadow-clone {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 💀 FASTER GLITCH */
 @keyframes button-glitch {
     0% { transform: translate(0); }
     20% { transform: translate(-2px, 2px); }
@@ -102,53 +175,14 @@ h1 {
     100% { transform: translate(0); }
 }
 
-/* Click Effect */
-.glow-on-hover:active {
-    transform: scale(0.9);
-}
-
-/* 🌀 Vortex Seal */
-.vortex-seal {
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, rgba(255, 0, 85, 0.8) 10%, rgba(0, 0, 0, 0) 70%);
-    border: 2px solid #ff0055;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 20px #ff0055;
-    animation: vortex-spin 3s linear infinite, glow-pulse 2s infinite alternate, seal-shake 0.2s infinite;
-}
-
-/* Vortex Spin Animation */
-@keyframes vortex-spin {
-    0% { transform: translateX(-50%) rotate(0deg); }
-    100% { transform: translateX(-50%) rotate(360deg); }
-}
-
-/* Glow Pulse Animation */
-@keyframes glow-pulse {
-    0% { box-shadow: 0 0 10px #ff0055; }
-    100% { box-shadow: 0 0 30px #ffcc00; }
-}
-
-/* Seal Shake Effect */
-@keyframes seal-shake {
-    0% { transform: translateX(-50%) rotate(0deg) translateY(0); }
-    25% { transform: translateX(-50%) rotate(2deg) translateY(2px); }
-    50% { transform: translateX(-50%) rotate(-2deg) translateY(-2px); }
-    75% { transform: translateX(-50%) rotate(2deg) translateY(2px); }
-    100% { transform: translateX(-50%) rotate(0deg) translateY(0); }
-}
-
     </style>
 </head>
 
 <body>
-  
-  
+    <div class="vortex-seal"></div>
+
+    <div class="vortex-seal"></div>
+
 
     <div class="button-container">
         <button class="glow-on-hover" onclick="window.open(`/pair`)" class="btn">PAIR CODE</button>
@@ -171,6 +205,11 @@ h1 {
     </div>
 
     <link rel="import" href="./loader.html">
+    <div class="vortex-seal"></div>
+    <div class="vortex-seal"></div>
+    <div class="vortex-seal"></div>
+    <div class="vortex-seal"></div>
+    <div class="vortex-seal"></div>
 
 </body>
 </html>
